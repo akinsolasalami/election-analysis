@@ -108,6 +108,7 @@ with open(file_to_save, "w") as txt_file:
          # 6f: Write an if statement to determine the winning county and get its vote count.
         if (county > winning_county) and (county_percentage > winning_county_perc):
             winning_county = county
+            winning_county_candidate = county_name
             winning_county_perc = county_percentage
 
 
@@ -115,8 +116,7 @@ with open(file_to_save, "w") as txt_file:
     winning_county_summary = (
 
         f"\n-------------------------\n"
-        f"Largest County Turnout: {largest_county}\n"
-        f"\n-------------------------\n"
+        f"Largest County Turnout: {winning_county_candidate}\n"
         f"Winning County Vote: {winning_county:,}\n"
         f"Winning County Percentage: {winning_county_perc:.1f}%\n"
         f"-------------------------\n\n"
